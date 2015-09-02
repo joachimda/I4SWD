@@ -1,0 +1,5 @@
+c:\users\bjørn nørgaard\documents\visual studio 2013\Projects\Interfaces-1\DoStuff\obj\Debug\DoStuff.csprojResolveAssemblyReference.cache
+c:\users\bjørn nørgaard\documents\visual studio 2013\Projects\Interfaces-1\DoStuff\bin\Debug\DoStuff.dll
+c:\users\bjørn nørgaard\documents\visual studio 2013\Projects\Interfaces-1\DoStuff\bin\Debug\DoStuff.pdb
+c:\users\bjørn nørgaard\documents\visual studio 2013\Projects\Interfaces-1\DoStuff\obj\Debug\DoStuff.dll
+c:\users\bjørn nørgaard\documents\visual studio 2013\Projects\Interfaces-1\DoStuff\obj\Debug\DoStuff.pdb

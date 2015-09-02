@@ -1,0 +1,5 @@
+c:\users\bjørn nørgaard\documents\visual studio 2013\Projects\Interfaces-0\Shapes\bin\Debug\Shapes.dll
+c:\users\bjørn nørgaard\documents\visual studio 2013\Projects\Interfaces-0\Shapes\bin\Debug\Shapes.pdb
+c:\users\bjørn nørgaard\documents\visual studio 2013\Projects\Interfaces-0\Shapes\obj\Debug\Shapes.csprojResolveAssemblyReference.cache
+c:\users\bjørn nørgaard\documents\visual studio 2013\Projects\Interfaces-0\Shapes\obj\Debug\Shapes.dll
+c:\users\bjørn nørgaard\documents\visual studio 2013\Projects\Interfaces-0\Shapes\obj\Debug\Shapes.pdb
