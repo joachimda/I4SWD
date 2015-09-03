@@ -10,20 +10,21 @@ namespace CardGame.Application
     {
         static void Main(string[] args)
         {
-            //while (true)
-            //{
+            /* Making objects assigning ctor's the stuff */
             Deck myDeck = new Deck();
             IGame myGame = new LowGame(myDeck);
 
-            for (int i = 1; i < 9; i++)
+            /* Filling deck with 1 of every card */
+            for (int i = 1; i < 9; i++)             /* There are 8 different numbervalues */
             {
-                for (int u = 1; u < 6; u++)
+                for (int u = 1; u < 6; u++)         /* There are 5 different cardtypes */
                 {
-                    ICard myCard = new Card(i, u);
-                    myDeck.AddCard(myCard);
+                    ICard myCard = new Card(i, u);  /* Making instans of every card */
+                    myDeck.AddCard(myCard);         /* Adding card to deck */
                 }
             }
 
+            /* Making players, both weak and normal */
             IPlayer Dennis = new WeakPlayer("Dennis");
             IPlayer Joachim = new WeakPlayer("Joachim");
             IPlayer Bjørn = new Player("Bjørn");
@@ -31,6 +32,7 @@ namespace CardGame.Application
             IPlayer Tobias = new WeakPlayer("Tobias");
             IPlayer Jacob = new WeakPlayer("Jacob");
 
+            /* Adding players to the game */
             myGame.AddPlayer(Dennis);
             myGame.AddPlayer(Joachim);
             myGame.AddPlayer(Bjørn);
@@ -38,10 +40,13 @@ namespace CardGame.Application
             myGame.AddPlayer(Tobias);
             myGame.AddPlayer(Jacob);
 
+            /* Making console output pretty */
             System.Console.WriteLine("");
 
+            /* Giving each player some cards */
             myGame.DealCards();
 
+            /* Outputting players hands to console */
             Dennis.ShowHand();
             Joachim.ShowHand();
             Bjørn.ShowHand();
@@ -49,10 +54,8 @@ namespace CardGame.Application
             Tobias.ShowHand();
             Jacob.ShowHand();
 
+            /* Determining who wins and outputting result */
             myGame.AnnounceWinner();
-
-            //System.Threading.Thread.Sleep(500);
-            //}
         }
     }
 }
