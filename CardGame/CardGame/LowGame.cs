@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace CardGame
 {
-    public class Game : IGame
+    public class LowGame : IGame
     {
         private List<IPlayer> _playersInGame = new List<IPlayer>();
         private int _cardTotal = 8 * 4;
         Deck _deck = null;
 
-        public Game(Deck deckToBePlayedWith)
+        public LowGame(Deck deckToBePlayedWith)
         {
             _deck = deckToBePlayedWith;
         }
@@ -42,19 +42,19 @@ namespace CardGame
 
         public void AnnounceWinner()
         {
-            int highscore = 0;
+            int lowscore = 5*(5*8);
             string currentWinner = "No winner";
 
             foreach (IPlayer player in _playersInGame)
             {
-                if (player.Score > highscore)
+                if (player.Score < lowscore)
                 {
-                    highscore = player.Score;
+                    lowscore = player.Score;
                     currentWinner = player.Name;
                 }
             }
 
-            System.Console.WriteLine("Winner: {0}, with {1} points.\n", currentWinner, highscore);
+            System.Console.WriteLine("Winner: {0}, with {1} points.\n", currentWinner, lowscore);
         }
     }
 }

@@ -13,7 +13,7 @@ namespace CardGame.Application
             //while (true)
             //{
             Deck myDeck = new Deck();
-            IGame myGame = new Game(myDeck);
+            IGame myGame = new LowGame(myDeck);
 
             for (int i = 1; i < 9; i++)
             {
