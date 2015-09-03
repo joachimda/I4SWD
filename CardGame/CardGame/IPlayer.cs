@@ -10,6 +10,7 @@ namespace CardGame
     {
         string Name { get; set; }
         void AddCard(ICard card);
-        int ShowHand();
+        void ShowHand();
+        int Score { get; }
     }
 }

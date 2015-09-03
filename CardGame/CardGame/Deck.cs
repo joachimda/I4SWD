@@ -10,16 +10,21 @@ namespace CardGame
     {
         private List<ICard> _deck = new List<ICard>();
 
-        public Deck(ICard card)
+        //public Deck(ICard card)
+        //{
+        //    for (int i = 1; i < 9; i++)
+        //    {
+        //        for (int u = 1; u < 5; u++)
+        //        {
+        //            //ICard myCard = new Card(i, u);
+        //            //_deck.Add(myCard);
+        //        }
+        //    }
+        //}
+
+        public void AddCard(ICard Card)
         {
-            for (int i = 1; i < 9; i++)
-            {
-                for (int u = 1; u < 5; u++)
-                {
-                    ICard myCard = new Card(i, u);
-                    _deck.Add(myCard);
-                }
-            }
+            _deck.Add(Card);
         }
 
         public void DealCardsToPlayer(IPlayer playerToBeGivenCard, int numberOfCards)

@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Card.cs" />
+    <Compile Include="GoldCard.cs" />
     <Compile Include="ICard.cs" />
     <Compile Include="Deck.cs" />
     <Compile Include="Game.cs" />

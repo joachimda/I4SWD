@@ -38,16 +38,31 @@ namespace CardGame
             }
         }
 
-        public int ShowHand()
+        public void ShowHand()
         {
-            int score = 0;
+            System.Console.WriteLine("Player: {0} has these cards:", _name);
 
             foreach (ICard card in _hand)
             {
-                score += (card.Multiplier * card.Number);
+                System.Console.WriteLine("\tCardtype: {0}, Number: {1}", card.Multiplier, card.Number);
             }
 
-            return score;
+            System.Console.WriteLine("With a total score of: {0}\n", Score);
+        }
+
+        public int Score
+        {
+            get
+            {
+                int score = 0;
+
+                foreach (ICard card in _hand)
+                {
+                    score += (card.Multiplier * card.Number);
+                }
+
+                return score;
+            }
         }
     }
 }

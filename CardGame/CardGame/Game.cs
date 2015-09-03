@@ -50,9 +50,9 @@ namespace CardGame
 
             foreach (IPlayer player in _playersInGame)
             {
-                if (player.ShowHand() > highscore)
+                if (player.Score > highscore)
                 {
-                    highscore = player.ShowHand();
+                    highscore = player.Score;
                     currentWinner = player.Name;
                 }
             }
