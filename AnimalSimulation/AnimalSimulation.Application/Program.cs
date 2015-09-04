@@ -10,11 +10,14 @@ namespace AnimalSimulation.Application
     {
         static void Main(string[] args)
         {
-            /* Hvorfor vil ReSharper 
-             * gerne ændre Grid herunder
-             * til var? 
-             */
-            Grid myGrid = new Grid();
+            //List<int> intList = new List<int>();
+
+            //for (int i = 0; i < 10; i++)
+            //{
+            //    intList.Add(i);
+            //}
+
+            //System.Console.WriteLine(intList.Count());
         }
     }
 }

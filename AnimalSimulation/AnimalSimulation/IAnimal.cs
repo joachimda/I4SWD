@@ -12,7 +12,8 @@ namespace AnimalSimulation
         int BodyWeight { get;  set; }
         int Energi { get;  set; }
         bool IsAlive { get;  set; }
-        ISquare CurrentLocation { get; set; }
+        ISquare CurrentLocation { get; }
+        void Move();
         void Status();
     }
 }

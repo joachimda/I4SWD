@@ -8,23 +8,12 @@ namespace AnimalSimulation
 {
     public class Animal : IAnimal
     {
-        private string _name;
         private int _bodyWeight;
         private int _energi;
         private bool _isAlive;
         private ISquare _currentLocation;
 
-        public string Name
-        {
-            get
-            {
-                return _name;
-            }
-            set
-            {
-                _name = value;
-            }
-        }
+        public string Name { get; set; }
 
         public int BodyWeight
         {
@@ -87,6 +76,19 @@ namespace AnimalSimulation
                 {
                     _currentLocation = value;
                 }
+            }
+        }
+
+        public void Move()
+        {
+            var rnd = new Random();
+            int nextMove = rnd.Next(1, 9);
+
+            switch (nextMove)
+            {
+                case 1:
+
+                    break;
             }
         }
 
