@@ -8,7 +8,7 @@ namespace CardGame
 {
     public class Player : IPlayer
     {
-        private List<ICard> _hand = new List<ICard>();
+        protected List<ICard> _hand = new List<ICard>();
         private string _name;
 
         public Player(string name)

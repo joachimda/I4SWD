@@ -12,7 +12,7 @@ namespace CardGame.Application
         {
             /* Making objects assigning ctor's the stuff */
             Deck myDeck = new Deck();
-            IGame myGame = new LowGame(myDeck);
+            IGame myGame = new Game(myDeck);
 
             /* Filling deck with 1 of every card */
             for (int i = 1; i < 9; i++)             /* There are 8 different numbervalues */
@@ -25,20 +25,20 @@ namespace CardGame.Application
             }
 
             /* Making players, both weak and normal */
-            IPlayer Dennis = new WeakPlayer("Dennis");
+            IPlayer Dennis = new Player("Dennis");
             IPlayer Joachim = new WeakPlayer("Joachim");
             IPlayer Bjørn = new Player("Bjørn");
-            IPlayer Maria = new WeakPlayer("Maria");
-            IPlayer Tobias = new WeakPlayer("Tobias");
-            IPlayer Jacob = new WeakPlayer("Jacob");
+            //IPlayer Maria = new WeakPlayer("Maria");
+            //IPlayer Tobias = new WeakPlayer("Tobias");
+            //IPlayer Jacob = new Player("Jacob");
 
             /* Adding players to the game */
             myGame.AddPlayer(Dennis);
             myGame.AddPlayer(Joachim);
             myGame.AddPlayer(Bjørn);
-            myGame.AddPlayer(Maria);
-            myGame.AddPlayer(Tobias);
-            myGame.AddPlayer(Jacob);
+            //myGame.AddPlayer(Maria);
+            //myGame.AddPlayer(Tobias);
+            //myGame.AddPlayer(Jacob);
 
             /* Making console output pretty */
             System.Console.WriteLine("");
@@ -50,9 +50,9 @@ namespace CardGame.Application
             Dennis.ShowHand();
             Joachim.ShowHand();
             Bjørn.ShowHand();
-            Maria.ShowHand();
-            Tobias.ShowHand();
-            Jacob.ShowHand();
+            //Maria.ShowHand();
+            //Tobias.ShowHand();
+            //Jacob.ShowHand();
 
             /* Determining who wins and outputting result */
             myGame.AnnounceWinner();

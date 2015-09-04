@@ -8,9 +8,9 @@ namespace CardGame
 {
     public class Game : IGame
     {
-        private List<IPlayer> _playersInGame = new List<IPlayer>();
-        private int _cardTotal = 8 * 4;
-        Deck _deck = null;
+        protected List<IPlayer> _playersInGame = new List<IPlayer>();
+        protected int _cardTotal = 8 * 4;
+        protected Deck _deck = null;
 
         public Game(Deck deckToBePlayedWith)
         {
@@ -40,7 +40,7 @@ namespace CardGame
             }
         }
 
-        public void AnnounceWinner()
+        public virtual void AnnounceWinner()
         {
             int highscore = 0;
             string currentWinner = "No winner";

@@ -194,3 +194,9 @@ FakesAssemblies/
 
 # Visual Studio 6 workspace options file
 *.opt
+
+# Random shit I don't know about
+*.pdb
+*.dll
+*.v12.suo
+*.csprojResolveAssemblyReference.cache
