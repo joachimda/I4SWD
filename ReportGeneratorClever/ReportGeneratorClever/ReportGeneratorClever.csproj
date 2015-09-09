@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A9EE5230-DE81-45C2-9DDC-11214D3213DB}</ProjectGuid>
+    <ProjectGuid>{55D0BAFE-3344-49FE-9A2D-1C1FD5B1C94B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AnimalSimulation</RootNamespace>
-    <AssemblyName>AnimalSimulation</AssemblyName>
+    <RootNamespace>ReportGeneratorClever</RootNamespace>
+    <AssemblyName>ReportGeneratorClever</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -39,9 +39,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Animal.cs" />
-    <Compile Include="IAnimal.cs" />
-    <Compile Include="ISquare.cs" />
+    <Compile Include="Employee.cs" />
+    <Compile Include="EmployeeDB.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

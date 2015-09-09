@@ -1,101 +1,70 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Diagnostics.CodeAnalysis;
 
 namespace AnimalSimulation
 {
     public class Animal : IAnimal
     {
-        private int _bodyWeight;
-        private int _energi;
-        private bool _isAlive;
-        private ISquare _currentLocation;
-
         public string Name { get; set; }
-
-        public int BodyWeight
-        {
-            get
-            {
-                return _bodyWeight;
-            }
-            set
-            {
-                if (value > 0 && value < 10000)
-                {
-                    _bodyWeight = value;
-                }
-            }
-        }
-
-        public int Energi
-        {
-            get
-            {
-                return _energi;
-            }
-            set
-            {
-                if (value > 0 && value < 100)
-                {
-                    _energi = value;
-                }
-            }
-        }
 
         public bool IsAlive
         {
             get
             {
-                return _isAlive;
+                return IsAlive;
             }
             set
             {
-                if (_isAlive == true)
+                if (!IsAlive) return; // if animal is already dead = no change.
+
+                IsAlive = value;
+
+                if (value == false)
                 {
-                    _isAlive = value;
+                    System.Console.WriteLine("Animal: {0} has died and should be removed from arena.", Name);
                 }
             }
         }
 
-        public ISquare CurrentLocation
+        public int Energy
         {
-            get
-            {
-                return _currentLocation;
-            }
+            get { return Energy; }
             set
             {
-                /* Her skal også tilføjes til tjek, som skal sikre at den 
-                 * nye location er ved siden af den gamle, således at 
-                 * dyrene ikke bare springer rundt overalt på grid.
-                 */
-                if (_currentLocation != null && value != _currentLocation)
+                if (0 <= value && value >= 100) // checking for legal value
                 {
-                    _currentLocation = value;
+                    Energy = value;
+
+                    if (value <= 0) // if energy reaches 0 or less, animal is dead
+                    {
+                        IsAlive = false;
+                    }
+                }
+                else // error message
+                {
+                    System.Console.WriteLine("Error: {0}, when trying to set energy level to {1}.", Name, value);
                 }
             }
         }
 
-        public void Move()
+        public int Weight
         {
-            var rnd = new Random();
-            int nextMove = rnd.Next(1, 9);
-
-            switch (nextMove)
+            get { return Weight; }
+            set
             {
-                case 1:
-
-                    break;
+                if (0 < value && value <= 10000)
+                {
+                    Weight = value;
+                }
+                else if (value > 10000)
+                {
+                    System.Console.WriteLine("Error: {0} is too fat.", Name);
+                }
             }
         }
 
-        public void Status()
+        public int Move()
         {
-            /* Printfunktion som skal bruges til kontroltjek og debugging
-             */
+            throw new System.NotImplementedException();
         }
     }
 }

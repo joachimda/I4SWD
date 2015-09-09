@@ -14,7 +14,7 @@ namespace CardGame
 
         public Game(Deck deckToBePlayedWith)
         {
-            _deck = deckToBePlayedWith;
+            _deck = deckToBePlayedWith
         }
 
         public int CardTotal

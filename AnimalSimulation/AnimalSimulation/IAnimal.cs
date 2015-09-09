@@ -1,19 +1,35 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AnimalSimulation
+﻿namespace AnimalSimulation
 {
+    /// <summary>
+    /// Does not implement the currentlocation,
+    /// should be changed through Move func.
+    /// </summary>
     public interface IAnimal
     {
-        string Name { get;  set; }
-        int BodyWeight { get;  set; }
-        int Energi { get;  set; }
-        bool IsAlive { get;  set; }
-        ISquare CurrentLocation { get; }
-        void Move();
-        void Status();
+        /// <summary>
+        /// Name of the animal (e.g. "Elephant").
+        /// </summary>
+        string Name { get; set; }
+
+        /// <summary>
+        /// State of the animal, if its dead or alive.
+        /// </summary>
+        bool IsAlive { get; set; }
+        
+        /// <summary>
+        /// Energy level of the animal, 100% = doing well, 0% = dead.
+        /// </summary>
+        int Energy { get; set; }
+
+        /// <summary>
+        /// The weight of the animal in kilograms.
+        /// </summary>
+        int Weight { get; set; }
+
+        /// <summary>
+        /// Moves the animal in a random direction.
+        /// </summary>
+        /// <returns>Returns -1 on error and 1 on success.</returns>
+        int Move();
     }
 }
