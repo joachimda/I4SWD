@@ -14,7 +14,7 @@ namespace CardGame
 
         public Game(Deck deckToBePlayedWith)
         {
-            _deck = deckToBePlayedWith
+            _deck = deckToBePlayedWith;
         }
 
         public int CardTotal
@@ -33,7 +33,7 @@ namespace CardGame
 
         public void DealCards()
         {
-            int PlayerCount = _playersInGame.Count;
+            int playerCount = _playersInGame.Count;
             foreach (IPlayer player in _playersInGame)
             {
                 _deck.DealCardsToPlayer(player, 5);
