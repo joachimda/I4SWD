@@ -42,7 +42,7 @@ namespace CardGame
                 System.Console.WriteLine("\tCardtype: {0}, Number: {1}", card.Multiplier, card.Number);
             }
 
-            System.Console.WriteLine("With a total score of: {0}\n", Score);
+            System.Console.WriteLine("\tWith a score of: {0}\n", Score);
         }
 
         public int Score
@@ -53,7 +53,7 @@ namespace CardGame
 
                 foreach (ICard card in _hand)
                 {
-                    score += (card.Multiplier * card.Number);
+                    score += card.Value;
                 }
 
                 return score;

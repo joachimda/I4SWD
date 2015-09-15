@@ -11,13 +11,14 @@ namespace CardGame.Application
         static void Main(string[] args)
         {
             /* Making objects assigning ctor's the stuff */
-            Deck myDeck = new Deck();
-            IGame myGame = new Game(myDeck);
+            var myDeck = new Deck();
+            IGame myGame = new LowGame(myDeck);
+            var myPlayers = new List<IPlayer>();
 
             /* Filling deck with 1 of every card */
-            for (int i = 1; i < 9; i++)             /* There are 8 different numbervalues */
+            for (var i = 1; i < 9; i++)             /* There are 8 different numbervalues */
             {
-                for (int u = 1; u < 6; u++)         /* There are 5 different cardtypes */
+                for (var u = 1; u < 6; u++)         /* There are 5 different cardtypes */
                 {
                     ICard myCard = new Card(i, u);  /* Making instans of every card */
                     myDeck.AddCard(myCard);         /* Adding card to deck */
@@ -25,20 +26,18 @@ namespace CardGame.Application
             }
 
             /* Making players, both weak and normal */
-            IPlayer Dennis = new Player("Dennis");
-            IPlayer Joachim = new WeakPlayer("Joachim");
-            IPlayer Bjørn = new Player("Bjørn");
-            //IPlayer Maria = new WeakPlayer("Maria");
-            //IPlayer Tobias = new WeakPlayer("Tobias");
-            //IPlayer Jacob = new Player("Jacob");
+            myPlayers.Add(new WeakPlayer("Dennis"));
+            myPlayers.Add(new WeakPlayer("Joachim"));
+            myPlayers.Add(new Player("Bjørn"));
+            //myPlayers.Add(new Player("Maria"));
+            //myPlayers.Add(new Player("Tobias"));
+            //myPlayers.Add(new WeakPlayer("Jacob"));
 
             /* Adding players to the game */
-            myGame.AddPlayer(Dennis);
-            myGame.AddPlayer(Joachim);
-            myGame.AddPlayer(Bjørn);
-            //myGame.AddPlayer(Maria);
-            //myGame.AddPlayer(Tobias);
-            //myGame.AddPlayer(Jacob);
+            foreach (var myPlayer in myPlayers)
+            {
+                myGame.AddPlayer(myPlayer);
+            }
 
             /* Making console output pretty */
             System.Console.WriteLine("");
@@ -47,15 +46,14 @@ namespace CardGame.Application
             myGame.DealCards();
 
             /* Outputting players hands to console */
-            Dennis.ShowHand();
-            Joachim.ShowHand();
-            Bjørn.ShowHand();
-            //Maria.ShowHand();
-            //Tobias.ShowHand();
-            //Jacob.ShowHand();
+            foreach (var myPlayer in myPlayers)
+            {
+                myPlayer.ShowHand();
+            }
 
             /* Determining who wins and outputting result */
             myGame.AnnounceWinner();
+
         }
     }
 }

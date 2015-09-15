@@ -8,7 +8,6 @@ namespace CardGame
 {
     public interface IGame
     {
-        int CardTotal { get; }
         void AddPlayer(IPlayer playerToBeAdded);
         void DealCards();
         void AnnounceWinner();

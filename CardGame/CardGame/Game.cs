@@ -10,19 +10,11 @@ namespace CardGame
     {
         protected List<IPlayer> _playersInGame = new List<IPlayer>();
         protected int _cardTotal = 8 * 4;
-        protected Deck _deck = null;
+        protected Deck _deck;
 
         public Game(Deck deckToBePlayedWith)
         {
             _deck = deckToBePlayedWith;
-        }
-
-        public int CardTotal
-        {
-            get
-            {
-                return _cardTotal;
-            }
         }
 
         public void AddPlayer(IPlayer playerToBeAdded)
@@ -33,7 +25,6 @@ namespace CardGame
 
         public void DealCards()
         {
-            int playerCount = _playersInGame.Count;
             foreach (IPlayer player in _playersInGame)
             {
                 _deck.DealCardsToPlayer(player, 5);
