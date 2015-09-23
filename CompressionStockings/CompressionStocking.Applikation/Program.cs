@@ -14,11 +14,10 @@ namespace CompressionStocking.Applikation
             IPump myPump = new Pump();
             ICompressionCtrl myCompressionCtrl = new AirCompressionCtrl(myPump);
 
-            INotificationDevice myLed = new Led();
+            INotificationDevice myGreenLed = new LedGreen();
+            INotificationDevice myReDevice = new LedRed();
             INotificationDevice myVibrator = new Vibrator();
-            INotification myNotification = new Notification();
-            myNotification.AddDevice(myLed);
-            myNotification.AddDevice(myVibrator);
+            INotification myNotification = new Notification(myGreenLed, myReDevice, myVibrator);
 
             IButtonHandler myStockingCtrl = new StockingCtrl(myCompressionCtrl, myNotification);
             ICompressionEventHandler myEventHandler = new StockingCtrl(myCompressionCtrl, myNotification);

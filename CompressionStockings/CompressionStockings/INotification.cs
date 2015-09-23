@@ -4,6 +4,5 @@
     {
         void NotifyCompressing();
         void StopNotifying();
-        void AddDevice(INotificationDevice notificationDevice);
     }
 }

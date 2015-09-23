@@ -5,7 +5,7 @@ namespace CompressionStockings
 {
     public class AirCompressionCtrl : ICompressionCtrl
     {
-        private IPump _pump;
+        private readonly IPump _pump;
         private ICompressionEventHandler _compressionEventHandler;
 
         public AirCompressionCtrl(IPump pump)

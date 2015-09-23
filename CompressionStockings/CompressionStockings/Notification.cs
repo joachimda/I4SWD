@@ -4,27 +4,27 @@ namespace CompressionStockings
 {
     public class Notification : INotification
     {
-        List<INotificationDevice> _notificationDevicesList = new List<INotificationDevice>(); 
+        private readonly INotificationDevice _greenLedDevice;
+        private readonly INotificationDevice _redLedDevice;
+        private readonly INotificationDevice _vibratorDevice;
+
+        public Notification(INotificationDevice greenLedDevice, INotificationDevice redLedDevice, INotificationDevice vibratorDevice)
+        {
+            _greenLedDevice = greenLedDevice;
+            _redLedDevice = redLedDevice;
+            _vibratorDevice = vibratorDevice;
+        }
 
         public void NotifyCompressing()
         {
-            foreach (INotificationDevice device in _notificationDevicesList)
-            {
-                device.On();
-            }
+            _greenLedDevice.On();
+            _vibratorDevice.On();
         }
 
         public void StopNotifying()
         {
-            foreach (INotificationDevice device in _notificationDevicesList)
-            {
-                device.Off();
-            }
-        }
-
-        public void AddDevice(INotificationDevice notificationDevice)
-        {
-            _notificationDevicesList.Add(notificationDevice);
-        }
+            _greenLedDevice.Off();
+            _vibratorDevice.Off();
+        }      
     }
 }

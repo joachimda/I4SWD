@@ -4,8 +4,8 @@ namespace CompressionStockings
 {
     public class StockingCtrl : IButtonHandler, ICompressionEventHandler
     {
-        private ICompressionCtrl _compressionCtrl;
-        private INotification _notification;
+        private readonly ICompressionCtrl _compressionCtrl;
+        private readonly INotification _notification;
 
         public StockingCtrl(ICompressionCtrl compressionCtrl, INotification notification)
         {
