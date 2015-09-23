@@ -46,12 +46,15 @@
     <Compile Include="INotification.cs" />
     <Compile Include="INotificationDevice.cs" />
     <Compile Include="IPump.cs" />
+    <Compile Include="ITightner.cs" />
+    <Compile Include="LaceCompressionCtrl.cs" />
     <Compile Include="LedGreen.cs" />
     <Compile Include="LedRed.cs" />
     <Compile Include="Notification.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Pump.cs" />
     <Compile Include="StockingCtrl.cs" />
+    <Compile Include="Tightner.cs" />
     <Compile Include="Vibrator.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

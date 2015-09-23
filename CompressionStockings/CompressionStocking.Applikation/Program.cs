@@ -12,7 +12,8 @@ namespace CompressionStocking.Applikation
         static void Main(string[] args)
         {
             IPump myPump = new Pump();
-            ICompressionCtrl myCompressionCtrl = new AirCompressionCtrl(myPump);
+            ITightner myTightner = new Tightner();
+            ICompressionCtrl myCompressionCtrl = new LaceCompressionCtrl(myTightner);
 
             INotificationDevice myGreenLed = new LedGreen();
             INotificationDevice myReDevice = new LedRed();
