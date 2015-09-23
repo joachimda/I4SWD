@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Data;
 
 namespace CompressionStockings
 {
@@ -15,16 +16,40 @@ namespace CompressionStockings
             _vibratorDevice = vibratorDevice;
         }
 
-        public void NotifyCompressing()
+        public void NotifyCompressing(int state)
         {
-            _greenLedDevice.On();
+            switch (state)
+            {
+                case 1:
+                    _greenLedDevice.On();
+                    break;
+                case 2:
+                    _redLedDevice.On();
+                    break;
+                case 3:
+                    System.Console.WriteLine("ERROR in: {0}", System.Reflection.MethodBase.GetCurrentMethod().Name);
+                    break;
+            }
+
             _vibratorDevice.On();
         }
 
-        public void StopNotifying()
+        public void StopNotifying(int state)
         {
-            _greenLedDevice.Off();
+            switch (state)
+            {
+                case 1:
+                    _greenLedDevice.Off();
+                    break;
+                case 2:
+                    _redLedDevice.Off();
+                    break;
+                case 3:
+                    System.Console.WriteLine("ERROR in: {0}", System.Reflection.MethodBase.GetCurrentMethod().Name);
+                    break;
+            }
+
             _vibratorDevice.Off();
-        }      
+        }
     }
 }

@@ -27,14 +27,14 @@ namespace CompressionStockings
             System.Console.WriteLine("");
         }
 
-        public void NotifiCompressionComplete()
+        public void NotifiCompressionComplete(int state)
         {
-            _notification.StopNotifying();
+            _notification.StopNotifying(state);
         }
 
-        public void NotifiCompressionStarted()
+        public void NotifiCompressionStarted(int state)
         {
-            _notification.NotifyCompressing();
+            _notification.NotifyCompressing(state);
         }
     }
 }

@@ -22,13 +22,13 @@ namespace CompressionStockings
                 return;
             }
 
-            _compressionEventHandler.NotifiCompressionStarted();
+            _compressionEventHandler.NotifiCompressionStarted(1);
             _pump.Forward();
 
             DelayFancy(5);
 
             _pump.Stop();
-            _compressionEventHandler.NotifiCompressionComplete();
+            _compressionEventHandler.NotifiCompressionComplete(1);
 
             IsPumped = true;
         }
@@ -41,13 +41,13 @@ namespace CompressionStockings
                 return;
             }
 
-            _compressionEventHandler.NotifiCompressionStarted();
+            _compressionEventHandler.NotifiCompressionStarted(2);
             _pump.Reverse();
 
             DelayFancy(2);
 
             _pump.Stop();
-            _compressionEventHandler.NotifiCompressionComplete();
+            _compressionEventHandler.NotifiCompressionComplete(2);
 
             IsPumped = false;
         }

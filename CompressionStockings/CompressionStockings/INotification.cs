@@ -2,7 +2,7 @@
 {
     public interface INotification
     {
-        void NotifyCompressing();
-        void StopNotifying();
+        void NotifyCompressing(int state);
+        void StopNotifying(int state);
     }
 }

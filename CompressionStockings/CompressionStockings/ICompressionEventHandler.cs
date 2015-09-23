@@ -2,7 +2,7 @@
 {
     public interface ICompressionEventHandler
     {
-        void NotifiCompressionComplete();
-        void NotifiCompressionStarted();
+        void NotifiCompressionComplete(int state);
+        void NotifiCompressionStarted(int state);
     }
 }
